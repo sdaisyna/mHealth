@@ -1,7 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcryptjs'); // library file for hashing password
 const jwt = require('jsonwebtoken');
-const User = require('../models/users');
+const User = require('../model/user');
 
 const router = express.Router();
 
@@ -26,7 +26,7 @@ router.post('/signup', (req, res, next) => {
     })
 })
 
-router.post('/sigin', (req, res, next) => {
+router.post('/signin', (req, res, next) => {
     console.log(req.body);
     User.findOne({ email: req.body.email })
         .then((user) => {
@@ -49,3 +49,5 @@ router.post('/sigin', (req, res, next) => {
             }
         }).catch(next);
 })
+
+module.exports = router;

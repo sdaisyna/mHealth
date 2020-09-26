@@ -7,13 +7,13 @@ const medicinePlanSchema = new mongoose.Schema({
         required: true
     },
     timeToTake: {
-        type: timestamps,
-        required: true
-    },
-    days: {
         type: String,
         required: true
     },
+    days: [{
+        type: String,
+        required: true
+    }],
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'

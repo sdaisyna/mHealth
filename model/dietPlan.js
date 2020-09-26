@@ -7,11 +7,11 @@ const dietPlanSchema = new mongoose.Schema({
         required: true
     },
     weight: {
-        type: Number,
+        type: String,
         required: true
     },
     timeToEat: {
-        type: timestamps,
+        type: String,
         required: true
     },
     user: {
